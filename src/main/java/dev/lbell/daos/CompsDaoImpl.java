@@ -7,13 +7,15 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.log4j.Logger;
 
 import dev.lbell.models.Comps;
 import dev.lbell.models.User;
 import dev.lbell.util.ConnectionUtil;
 
 public class CompsDaoImpl implements CompsDao {
-
+	private static Logger log = Logger.getRootLogger();
+	
 	@Override
 	public List<Comps> getUserComps(int userId) {
 		String sql = "SELECT * FROM COMPS WHERE USER_ID = ?";
@@ -22,7 +24,7 @@ public class CompsDaoImpl implements CompsDao {
 				PreparedStatement pStatement = connection.prepareStatement(sql);) {
 			pStatement.setInt(1, userId);
 			ResultSet rs = pStatement.executeQuery();
-			//log.info(interaction);
+			log.info(sql + String.format(" (%d)",userId));
 			while(rs.next()) {
 				Comps comp = new Comps(rs.getInt("COMP_ID"), rs.getInt("AMOUNT"), rs.getInt("USER_ID"), rs.getInt("MANAGER_ID"), rs.getString("DESCRIPTION"), rs.getString("STATUS"));
 				comps.add(comp);
@@ -42,7 +44,7 @@ public class CompsDaoImpl implements CompsDao {
 		try(Connection connection = ConnectionUtil.getConnection();
 				Statement statement = connection.createStatement();) {
 			ResultSet rs = statement.executeQuery(sql);
-			//log.info(interaction);
+			log.info(sql);
 			while(rs.next()) {
 				Comps comp = new Comps(rs.getInt("COMP_ID"), rs.getInt("AMOUNT"), rs.getInt("USER_ID"), rs.getInt("MANAGER_ID"), rs.getString("DESCRIPTION"), rs.getString("STATUS"));
 				comps.add(comp);
@@ -66,6 +68,9 @@ public class CompsDaoImpl implements CompsDao {
 				pStatement.setString(3, comp.getStatus());
 				pStatement.setInt(4, comp.getUserId());
 				ResultSet rs = pStatement.executeQuery();
+				System.out.println("what we want to log");
+				System.out.println(sql + String.format(" (%d,%s,%s,%d)",comp.getAmount(), comp.getDescription(), comp.getStatus(), comp.getUserId()));
+				log.info(sql + String.format(" (%d,%s,%s,%d)",comp.getAmount(), comp.getDescription(), comp.getStatus(), comp.getUserId()));
 				return true;
 			}
 			return false;
@@ -87,7 +92,7 @@ public class CompsDaoImpl implements CompsDao {
 				pStatement.setInt(2, comp.getManagerId());
 				pStatement.setInt(3, comp.getId());
 				ResultSet rs = pStatement.executeQuery();
-				
+				log.info(sql + String.format(" (%s,%d,%d)", comp.getStatus(), comp.getManagerId(), comp.getId()));
 				return true;
 			}
 			return false;
@@ -105,7 +110,7 @@ public class CompsDaoImpl implements CompsDao {
 				PreparedStatement pStatement = connection.prepareStatement(sql);) {
 			pStatement.setInt(1, id);
 			ResultSet rs = pStatement.executeQuery();
-			//log.info(interaction);
+			log.info(sql + String.format(" (%d)",id));
 			if(rs.next()) {
 				Comps comp = new Comps(rs.getInt("COMP_ID"), rs.getInt("AMOUNT"), rs.getInt("USER_ID"), rs.getInt("MANAGER_ID"), rs.getString("DESCRIPTION"), rs.getString("STATUS"));
 				return comp;

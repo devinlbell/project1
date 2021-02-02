@@ -5,13 +5,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
-
+import org.apache.log4j.Logger;
 
 import dev.lbell.models.User;
 import dev.lbell.util.ConnectionUtil;
 
 public class UsersDaoImpl implements UsersDao {
-
+	private static Logger log = Logger.getRootLogger();
+	
 	public User getUser(String username, String password) {
 		String sql = "SELECT * FROM USERS WHERE USERNAME = ? AND PASSWORD = ?";
 		
@@ -21,7 +22,7 @@ public class UsersDaoImpl implements UsersDao {
 			pStatement.setString(1, username);
 			pStatement.setString(2, password);
 			ResultSet rs = pStatement.executeQuery();
-			//log.info(interaction);
+			log.info(sql + String.format(" (%s,%s)",username, password));
 			if(rs.next()) {
 				User user = new User(rs.getInt("USER_ID"), username, password, rs.getString("NAME"), rs.getString("EMPLOYEE_ROLE"));
 				return user;
