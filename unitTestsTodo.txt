@@ -1,0 +1,7 @@
+==============
+tests
+==============
+1. changing comps status
+2. test creating comps (create, find in database)
+
+3. negative test creating comps(throw exception if negative?)
