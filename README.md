@@ -27,8 +27,9 @@ List of features ready and TODOs for future development
 * A Manager can view all resolved requests from all employees and see which manager resolved it
 
 To-do list:
-* Wow improvement to be done 1
-* Wow improvement to be done 2
+* A Manager can view all Employees
+* An Employee can upload an image of his/her receipt as part of the reimbursement request
+* A Manager can view images of the receipts from reimbursement requests
 
 ## Getting Started
    
@@ -45,9 +46,6 @@ To-do list:
 
 > Here, you instruct other people on how to use your project after they’ve installed it. This would also be a good place to include screenshots of your project in action.
 
-## Contributors
-
-> Here list the people who have contributed to this project. (ignore this section, if its a solo project)
 
 ## License
 
