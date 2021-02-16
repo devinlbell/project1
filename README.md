@@ -49,4 +49,4 @@ https://zmdownload-accl.zoho.com/download?sign=0c08ce5fc860ed10d4e0d1dd2b5f9624e
 
 ## License
 
-This project uses the following license: [<license_name>](<link>).
+This project uses the following license: [MIT](<link>).
