@@ -33,14 +33,13 @@ To-do list:
 
 ## Getting Started
    
-(include git clone command)
-(include all environment setup steps)
+Git clone repository
+Git checkout to master brance
 
-> Be sure to include BOTH Windows and Unix command  
-> Be sure to mention if the commands only work on a specific platform (eg. AWS, GCP)
+Set up database using the sql scripts
+Link to database by inputting credentials into environment variables
+Update maven project to download dependencies
 
-- All the `code` required to get started
-- Images of what it should look like
 
 ## Usage
 
