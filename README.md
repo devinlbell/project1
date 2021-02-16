@@ -33,12 +33,12 @@ To-do list:
 
 ## Getting Started
    
-Git clone repository
-Git checkout to master branch
+* Git clone repository
+* Git checkout to master branch
 
-Set up database using the sql scripts
-Link to database by inputting credentials into environment variables
-Update maven project to download dependencies
+* Set up database using the sql scripts
+* Link to database by inputting credentials into environment variables
+* Update maven project to download dependencies
 
 
 ## Usage
