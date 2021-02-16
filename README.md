@@ -34,7 +34,7 @@ To-do list:
 ## Getting Started
    
 Git clone repository
-Git checkout to master brance
+Git checkout to master branch
 
 Set up database using the sql scripts
 Link to database by inputting credentials into environment variables
@@ -42,6 +42,8 @@ Update maven project to download dependencies
 
 
 ## Usage
+
+A demo of the features developed.
 
 https://zmdownload-accl.zoho.com/download?sign=0c08ce5fc860ed10d4e0d1dd2b5f9624e22b82ed87c5b7e587be733fecc4c7e2&digest=850b2f598970ea04dd0dd9064547fc44df8b8494768d2420fa07ccfa3de6080b%2333657577
 
