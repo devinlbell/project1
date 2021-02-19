@@ -6,9 +6,9 @@ A web application for managing employee reimbursements.
 
 ## Technologies Used
 
-* Java - version 1.0
-* Maven - version 2.0
-* JDBC - version 3.0
+* Java - version
+* Maven - version
+* JDBC - version
 
 ## Features
 
